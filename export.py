@@ -13,7 +13,8 @@ import os
 state_file_name = '.last_export.orgexport'
 
 def main():
-    
+
+    exit
 
     ap = argparse.ArgumentParser()
     ap.add_argument('inputfile')
@@ -44,7 +45,7 @@ def main():
 
     note_re = re.compile(r'\n'.join([
         r'(?P<title>.+)'
-        , r'((?P<type>Lesezeichen|Markierung|Notiz)[  ]+auf Seite[  ]+(?P<page>\d+): )'
+        , r'((?P<type>Lesezeichen|Markierung|Notiz)[  ]+auf Seite[  ]+(?P<page>\d+)(-\d)*: )'
         #note is optional
         + r'''((?P<note>(?:.|\n)*)
 )?''' + r'"(?P<quote>(?:.|\n)*)"'
